@@ -7,14 +7,12 @@ typedef pair<int, string> mypair;
 
 class Student
 {
-    int medmark;
 public:
     map<int, string> guys;
     
-    void AddStudent(int s1, string s2, int m)
+    void AddStudent(int s1, string s2)
     {
         guys.insert(mypair(s1, s2));
-        medmark = m;
     }
     
     void FindStudent(int s1)
@@ -30,13 +28,8 @@ public:
     {
         for (auto ptr = guys.begin(); ptr != guys.end(); ptr++)
         {
-            cout << ptr->first << " - " << ptr-> second << endl << "Medium mark is: " << medmark << endl;;
+            cout << ptr->first << " - " << ptr-> second  << endl;;
         }
-    }
-    
-    int GetMark()
-    {
-        return medmark;
     }
 };
 
@@ -46,8 +39,8 @@ int main()
 {
     Student guys;
     
-    guys.AddStudent(23, "Sanya", 12);
-    guys.AddStudent(21, "Peter", 11);
+    guys.AddStudent(23, "Sanya");
+    guys.AddStudent(21, "Peter");
     
     guys.Output();
     
